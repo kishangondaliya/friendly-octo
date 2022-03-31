@@ -1,0 +1,20 @@
+diff --git a/lite/uploading.py b/lite/uploading.py
+index 41ce819..a78cbe6 100644
+--- a/lite/uploading.py
++++ b/lite/uploading.py
+@@ -76,15 +76,6 @@ class DataProcessing:
+         self.storage = storage
+ 
+     def set_resolution_and_timestamps(self, data, res, tstamp):
+-        """
+-        Set the relative timestamp of a data point i.e. right now minus time when data was captured.
+-        @param data: Dictionary containing the data
+-        @param res: The desired resolution
+-            microsecond = 'us
+-            millisecond = 'ms'
+-            second = 's'
+-        @param tstamp: Timestamp used in calculating relative timestamp
+-        """
+         ts = abs(float(tstamp))
+         if int(self.config.conf_data['cortex']['upload']['include_timestamp']):
+             data['t'] = int(ts)
